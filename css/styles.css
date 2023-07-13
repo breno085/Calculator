@@ -22,11 +22,17 @@ body {
     box-shadow: 6px 10px rgb(0 0 0 / 0.2);
 }
 
-.display{
-    text-align: right;
-    font-size: larger;
-    margin: 5px;
-    height: 40px;
+.display {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 25px;
+    margin: 2.5px;
+    padding: 10px;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: dimgray;
 }
 
 .buttons {
@@ -39,7 +45,8 @@ body {
     width: 55px;
     height: 55px;
     font-size: larger;
-    border-radius: 6px;
+    border-radius: 5px;
+    background-color: silver;
 }
 
 #equal{
