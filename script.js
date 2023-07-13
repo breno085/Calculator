@@ -31,5 +31,5 @@ function operate(num1, num2, op) {
     return operation;
   }
 
-  //Adicionar evento, quando eu passo o mouse no botão ele muda de cor
-  //Adicionar outro evento, quando eu click no botão ele diminui um pouco de tamanho
+  //Adicionar evento que ao passar o mouse pelos botões ele muda de cor
+  //Adicionar outro evento que ao clickar e segurar os botões, eles diminuem um pouco de tamanho
