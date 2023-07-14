@@ -17,7 +17,7 @@ function div(a, b){
 let num1;
 let num2;
 let op;
-let operando = '';
+let lastOperand = '';
 
 const operators = ['+', '-', '*', '/'];
 
@@ -42,11 +42,11 @@ function operate(num1, num2, op) {
       document.getElementById("display").innerHTML += button.id;
     }
       if (!isNaN(button.id) || button.id === '.') {
-        operando += button.id;
+        lastOperand += button.id;
         if (op) {
-          num2 = +operando;
+          num2 = +lastOperand;
         } else {
-          num1 = +operando;
+          num1 = +lastOperand;
         }
       } else if (operators.includes(button.id)) {
         if (num1 && num2) {
@@ -54,9 +54,9 @@ function operate(num1, num2, op) {
           num2 = '';
         }
         op = button.id;
-        operando = '';
+        lastOperand = '';
 
-      } else if (typeof num1 === 'number' && typeof num2 === 'number' && button.id === 'equal') {
+      } else if (num1 && num2 && button.id === 'equal') {
         document.getElementById("display").innerHTML = Number(operate(num1, num2, op).toFixed(10));
 
       } else if (button.id === 'clear') {
@@ -64,7 +64,7 @@ function operate(num1, num2, op) {
         num1 = '';
         num2 = '';
         op = '';
-        operando = '';
+        lastOperand = '';
       }
     });
   });
