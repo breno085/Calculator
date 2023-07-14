@@ -38,7 +38,7 @@ function operate(num1, num2, op) {
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
-    divisionError = false;
+    
     if (button.id != 'equal' && document.getElementById("display").innerHTML != 'Error: Division by zero'){
       document.getElementById("display").innerHTML += button.id;
     }
@@ -73,6 +73,7 @@ function operate(num1, num2, op) {
       }
     });
   });
+
   //Faltando para terminar:
   //Adicionar evento que ao passar o mouse pelos botões ele muda de cor
   //Adicionar outro evento que ao clickar e segurar os botões, eles diminuem um pouco de tamanho
