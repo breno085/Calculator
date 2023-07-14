@@ -38,7 +38,8 @@ function operate(num1, num2, op) {
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
-    if (button.id != 'equal'){
+    divisionError = false;
+    if (button.id != 'equal' && document.getElementById("display").innerHTML != 'Error: Division by zero'){
       document.getElementById("display").innerHTML += button.id;
     }
       if (!isNaN(button.id) || button.id === '.') {
@@ -56,8 +57,12 @@ function operate(num1, num2, op) {
         op = button.id;
         lastOperand = '';
 
-      } else if (num1 && num2 && button.id === 'equal') {
-        document.getElementById("display").innerHTML = Number(operate(num1, num2, op).toFixed(10));
+      } else if (num1 && typeof num2 === 'number' && button.id === 'equal') {
+        if (op === '/' && num2 === 0){
+            document.getElementById("display").innerHTML = 'Error: Division by zero';
+        } else {
+            document.getElementById("display").innerHTML = Number(operate(num1, num2, op).toFixed(10));
+        }
 
       } else if (button.id === 'clear') {
         document.getElementById("display").innerHTML = '';
@@ -72,6 +77,5 @@ function operate(num1, num2, op) {
   //Adicionar evento que ao passar o mouse pelos botões ele muda de cor
   //Adicionar outro evento que ao clickar e segurar os botões, eles diminuem um pouco de tamanho
   //Mudar o texto dos operadores no display
-  //Display a snarky error message if the user tries to divide by 0
   //Fazer o extra credit: fazer o DEL funcionar e adicionar suporte para o teclado
   //Pronto!
