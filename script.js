@@ -19,7 +19,8 @@ let num2;
 let op;
 let disValue;
 let temp = true;
-let result;
+let lastResult;
+let operando = '';
 
 const operators = ['+', '-', '*', '/'];
 
@@ -39,33 +40,38 @@ function operate(num1, num2, op) {
   const buttons = document.querySelectorAll('button');
 
   buttons.forEach((button) => {
-
     button.addEventListener('click', () => {
         document.getElementById("display").innerHTML += button.id;
-        if (!isNaN(button.id)){
-        disValue = +document.getElementById("display").innerHTML;
+        if (!isNaN(button.id) || button.id === '.'){
+            //disValue = +document.getElementById("display").innerHTML;
+            operando += button.id;
+            console.log(operando);
             if (temp){
-            num1 = disValue;
+            num1 = +operando;
             console.log(num1);
             console.log(num2);
             } else {
-            num2 = disValue;
+            num2 = +operando;
             console.log(num1);
             console.log(num2);
             }
         }
         else if (operators.includes(button.id)){
             console.log(button.id);
-            document.getElementById("display").innerHTML = '';
+            //document.getElementById("display").innerHTML = '';
             temp = false;
             op = button.id;
+            operando = '';
+            //  if (lastResult){
+            //     operando = lastResult;
+            // }
         }
         else if (typeof num1 === 'number' && typeof num2 === 'number' && button.id === 'equal'){
             console.log(operate(num1, num2, op));
             document.getElementById("display").innerHTML = Number(operate(num1, num2, op).toFixed(10));
-            result = operate(num1, num2, op);
+            lastResult = operate(num1, num2, op);
             temp = true;
-            num1 = result;
+            num1 = lastResult;
         }
         else if (button.id === 'clear'){
             document.getElementById("display").innerHTML = '';
@@ -73,7 +79,12 @@ function operate(num1, num2, op) {
             num1 = '';
             num2 = '';
             op = '';
+            operando = '';
+            lastResult = '';
         }
+        // else if (button.id === 'del'){
+            
+        // }
         
     });
     
