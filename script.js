@@ -90,8 +90,3 @@ function operate(num1, num2, op) {
       button.style.backgroundColor = 'silver';
     });
   });
-  
-  //Faltando para terminar:
-  //Mudar o texto dos operadores no display
-  //Fazer o extra credit: fazer o DEL funcionar e adicionar suporte para o teclado
-  //Pronto!
