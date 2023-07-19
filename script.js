@@ -75,7 +75,7 @@ function operate(num1, num2, op) {
       button.classList.add('clicked');
       setTimeout(() => {
         button.classList.remove('clicked');
-      }, 200); // Remove the 'clicked' class after 200 milliseconds
+      }, 200);
     });
 
     button.addEventListener('mouseover', () => {
@@ -95,4 +95,3 @@ function operate(num1, num2, op) {
   //Mudar o texto dos operadores no display
   //Fazer o extra credit: fazer o DEL funcionar e adicionar suporte para o teclado
   //Pronto!
-  
