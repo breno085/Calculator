@@ -47,6 +47,11 @@ body {
     font-size: larger;
     border-radius: 5px;
     background-color: silver;
+    transition: transform 0.2s;
+}
+
+button.clicked {
+    transform: scale(0.85);
 }
 
 #equal{

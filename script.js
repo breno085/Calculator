@@ -71,23 +71,28 @@ function operate(num1, num2, op) {
         op = '';
         lastOperand = '';
       }
+
+      button.classList.add('clicked');
+      setTimeout(() => {
+        button.classList.remove('clicked');
+      }, 200); // Remove the 'clicked' class after 200 milliseconds
     });
+
     button.addEventListener('mouseover', () => {
       if (button.id === 'del' || button.id === 'clear'){
-        button.style.backgroundColor = '#E3242B';
+        button.style.backgroundColor = '#fd5c63';
       } else {
         button.style.backgroundColor = 'lightgreen';
       }
     });
+
     button.addEventListener('mouseleave', () => {
       button.style.backgroundColor = 'silver';
     });
-
   });
 
+  
   //Faltando para terminar:
-  //Adicionar evento que ao passar o mouse pelos botões ele muda de cor
-  //Adicionar outro evento que ao clickar e segurar os botões, eles diminuem um pouco de tamanho
   //Mudar o texto dos operadores no display
   //Fazer o extra credit: fazer o DEL funcionar e adicionar suporte para o teclado
   //Pronto!
