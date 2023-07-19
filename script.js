@@ -72,6 +72,17 @@ function operate(num1, num2, op) {
         lastOperand = '';
       }
     });
+    button.addEventListener('mouseover', () => {
+      if (button.id === 'del' || button.id === 'clear'){
+        button.style.backgroundColor = '#E3242B';
+      } else {
+        button.style.backgroundColor = 'lightgreen';
+      }
+    });
+    button.addEventListener('mouseleave', () => {
+      button.style.backgroundColor = 'silver';
+    });
+
   });
 
   //Faltando para terminar:
